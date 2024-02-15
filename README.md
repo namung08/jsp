@@ -41,9 +41,10 @@ int cnd = Integer.parseInt(arg0.getParameter("파라미터"));
 1-2. 해결
     ```java
     // 벨리데이션 처리
-	    String paraCnt = arg0.getParameter("cnt");
-	    PrintWriter out = arg1.getWriter();
-	    if(paraCnt != null && paraCnt.equals("")) {
-	    	cnt = Integer.parseInt(paraCnt);
-	    }
+	    int cnt = 100;
+        String paramCnt = arg0.getParameter("cnt");
+        if(paramCnt != null && !paramCnt.equals("")) {
+            cnt = Integer.parseInt(paramCnt);
+      }
+
     ```
