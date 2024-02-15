@@ -15,8 +15,17 @@ public class MyServlet2 extends HttpServlet{
 		arg1.setCharacterEncoding("UTF-8");
 	    arg1.setContentType("text/html; charset=utf-8");
 		// TODO Auto-generated method stub
+	    // request에 담겨져 있는 내용을 가져오기
+	    // 아래 코드는 cnt 파라미터 키값의 value 값을 가져온다.
+	    // 하지만 arg0.getParameter("cnt")의 값이 string 타입이므로 int 타입으로 치환
+	    int cnt = Integer.parseInt(arg0.getParameter("cnt"));
+	    
 	    PrintWriter out = arg1.getWriter();
-	    out.print("안녕 servlet");
+	    // 안녕 servlet 출력
+//	    out.print("안녕 servlet"+arg0);
+	    for(int i=0;i<cnt;i++) {
+	    	out.print((i+1)+" : 안녕 servlet<br>");
+	    }
 		
 	}
 }
