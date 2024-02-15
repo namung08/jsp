@@ -39,4 +39,11 @@ int cnd = Integer.parseInt(arg0.getParameter("파라미터"));
  - 주소에서 key 값 입력 O, value 값 입력 X
   -> 5XX Error : For input string: "" -> key 값이 없음
 1-2. 해결
-
+    ```java
+    // 벨리데이션 처리
+	    String paraCnt = arg0.getParameter("cnt");
+	    PrintWriter out = arg1.getWriter();
+	    if(paraCnt != null && paraCnt.equals("")) {
+	    	cnt = Integer.parseInt(paraCnt);
+	    }
+    ```
