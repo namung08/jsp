@@ -21,12 +21,11 @@ public class MyServlet2 extends HttpServlet{
 //	    int cnt = Integer.parseInt(arg0.getParameter("cnt"));
 //	    ->
 	    int cnt = 100;
-	    // 벨리데이션 처리
-	    String paraCnt = arg0.getParameter("cnt");
-	    PrintWriter out = arg1.getWriter();
-	    if(paraCnt != null && !paraCnt.equals("")) {
-	    	cnt = Integer.parseInt(paraCnt);
-	    }
+	      String paramCnt = arg0.getParameter("cnt");
+	      if(paramCnt != null && !paramCnt.equals("")) {
+	         cnt = Integer.parseInt(paramCnt);
+	      }
+
 	    // 안녕 servlet 출력
 //	    out.print("안녕 servlet"+arg0);
 	    for(int i=0;i<cnt;i++) {
