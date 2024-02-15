@@ -20,6 +20,8 @@ public class MyServlet2 extends HttpServlet{
 	    // 하지만 arg0.getParameter("cnt")의 값이 string 타입이므로 int 타입으로 치환
 //	    int cnt = Integer.parseInt(arg0.getParameter("cnt"));
 //	    ->
+	    // 벨리데이션 처리	    
+	    PrintWriter out = arg1.getWriter();
 	    int cnt = 100;
 	      String paramCnt = arg0.getParameter("cnt");
 	      if(paramCnt != null && !paramCnt.equals("")) {
