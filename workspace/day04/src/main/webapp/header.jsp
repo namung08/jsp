@@ -7,10 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%@ include file="header.jsp" %>
-	<h4>-----현재 페이지 영역-----</h4>
-	<p>페이지 내용들 이빈다.</p>
-	<h4>--------------------</h4>
-<%@ include file="footer.jsp" %>
+	<p>여기는 헤더 영역</p>
 </body>
 </html>
