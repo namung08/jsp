@@ -6,19 +6,20 @@ import java.io.PrintWriter;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-@WebServlet("/calc4")
+@WebServlet("/calc")
 public class Calc extends HttpServlet{
 	
 	@Override
 	protected void service(HttpServletRequest arg0, 
 			HttpServletResponse arg1) throws ServletException, IOException {
-		// session 객체
-		HttpSession session = arg0.getSession();
+		// cookie 객체
+		Cookie[] cookies = arg0.getCookies();
 		
 		PrintWriter out = arg1.getWriter();
 		
@@ -32,11 +33,11 @@ public class Calc extends HttpServlet{
 		}
 		
 		if( op.equals("=") ) {
-			// session 영역에 저장된 값 꺼내오기(5+)
-			// 5 꺼내오기
-			int x = (int) session.getAttribute("value");
-			// + 꺼내오기
-			String operator = (String) session.getAttribute("op");
+			// cookies 꺼내기
+			// 
+			int x = 0;
+			Cookie c = cookies[0];
+			if
 			
 			// 이번 요청(request)에서 받아온 값 가져오기(10=) 
 			int y = value;
@@ -51,9 +52,14 @@ public class Calc extends HttpServlet{
 			
 			out.printf("결과 값 : %d\n", result);
 			
-		} else {	// 값 저장(session)
-			session.setAttribute("value", value);
-			session.setAttribute("op", op);
+		} else {	// 값 저장(cookie에 저장)
+			// cookie로 사용할 때는 문자열 형태만 사용할 수 있다.
+			Cookie valueCookie = new Cookie("value", String.valueOf(value));
+			Cookie opCOokie = new Cookie("op", op);
+			
+			// 사용자에게 cookie가 전달된다.
+			arg1.addCookie(valueCookie);
+			arg1.addCookie(opCOokie);
 		}
 		
 		
