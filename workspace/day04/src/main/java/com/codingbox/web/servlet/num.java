@@ -13,11 +13,12 @@ import jakarta.servlet.http.HttpServletResponse;
 public class num extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		System.out.println("get 요청 도착");
 		doProcess(req, resp);
 	}
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
+		System.out.println("post 요청 도착");
 		doProcess(req, resp);
 	}
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws IOException {

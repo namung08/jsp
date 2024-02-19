@@ -64,3 +64,26 @@ if(key != null && !key.equals("")) {
 		key2 = Integer.parseInt(key);
 	}
 ```
+
+## java에서 method에 따른 명령어 실행
+```java
+protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// 실행 코드...
+}
+protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		// 실행 코드...
+}
+```
+
+## 위 코드에서 코드를 짧게 만들기
+```java
+protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		// 실행 코드
+}
+protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		doProcess(req, resp);
+}
+protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		doProcess(req, resp);
+}
+```
