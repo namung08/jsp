@@ -12,7 +12,8 @@ import jakarta.servlet.http.HttpServletResponse;
 public class num extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
+		int num1 = Integer.parseInt(req.getParameter("num1"));
+		int num2 = Integer.parseInt(req.getParameter("num2"));
 	}
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

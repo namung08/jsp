@@ -9,7 +9,7 @@
 <body>
 	<form action="num" method="get">
 		첫번쨰 정수<input type="text" name="num1"><br>
-		두번쨰 정수<input type="text" name="num1"><br>
+		두번쨰 정수<input type="text" name="num2"><br>
 		<input type="submit">
 	</form>
 </body>
