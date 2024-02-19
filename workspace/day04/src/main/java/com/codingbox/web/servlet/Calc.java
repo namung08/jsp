@@ -28,16 +28,29 @@ public class Calc extends HttpServlet{
 		
 		int value = 0;
 		
-		if( !value_.equals("") ) {
-			value = Integer.parseInt(value_);
+		if (value_ != null && !value_.equals("")) {
+		    value = Integer.parseInt(value_);
 		}
+
 		
-		if( op.equals("=") ) {
+		if (op != null && op.equals("=")) {
 			// cookies 꺼내기
-			// 
 			int x = 0;
-			Cookie c = cookies[0];
-			if
+			// cookies 객체 배열 안의 내용을 c에 대입
+			for(Cookie c : cookies) {
+				if(c.getName().equals("value")) {
+					x = Integer.parseInt(c.getValue());
+					break;
+				}
+			}
+			String operator = "";
+			for(Cookie c : cookies) {
+				if(c.getName().equals("op")) {
+					operator = c.getValue();
+					break;
+				}
+			}
+			
 			
 			// 이번 요청(request)에서 받아온 값 가져오기(10=) 
 			int y = value;
