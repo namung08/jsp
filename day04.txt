@@ -60,3 +60,12 @@
     6-1. jsp 내장객체
         - jsp페이지 내에서 제공되는 특수한 클래스 형의 객체
         - 내장 객체는 선언과 할당 없이 사용할 수 있다.
+            -> jsp 페이지 java클래스 형태로 변환된다. jsp 컨테이너가 java 클래스 안에 자동적으로 포함시킨다.
+    6-2. jsp 내장객체 종류
+        - HttpServletRequest    : request
+        - HttpServletResponse   : response
+        - jspWrite              : out
+        - HttpSession           : session
+        - ServletCOntext        : applocation
+        - Throwable             : exception
+        
