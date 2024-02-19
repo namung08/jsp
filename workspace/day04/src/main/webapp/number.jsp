@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="num" method="get">
+	<form action="num" method="post">
 		첫번쨰 정수<input type="text" name="num1"><br>
 		두번쨰 정수<input type="text" name="num2"><br>
 		<input type="submit">
