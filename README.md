@@ -53,3 +53,14 @@ int cnd = Integer.parseInt(arg0.getParameter("파라미터"));
 ```java
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 ```
+## jsp에서 파라미터 값 가져오는 법
+```java
+String key = request.getParameter("파라미터");
+```
+  - 파라미터에서 가져오는 값은 무조건 String 값이다.
+  - 파라미터에서 가져온 값이 null인지 equals을 사용하여 "" 값인지 확인을 한다
+```java
+if(key != null && !key.equals("")) {
+		key2 = Integer.parseInt(key);
+	}
+```

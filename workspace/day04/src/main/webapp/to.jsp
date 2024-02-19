@@ -10,17 +10,19 @@
 <%
 	String ansStr = request.getParameter("ans");
 	int ans=0;
+	String result = null;
 	if(ansStr != null && !ansStr.equals("")) {
 		ans = Integer.parseInt(ansStr);
+	}
+	if(ans == 300) {
+		result = "정답입니다.";
+	} else { 
+		result = "정답이 아닙니다.";
 	}
 %>
 <h1>응답결과</h1>
 <p>
-	<% if(ans==300){ %>
-		정답입니다.
-	<%} else { %>
-		정답이 아닙니다.
-	<%} %>
+	<%= result %>
 </p>
 </body>
 </html>
