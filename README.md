@@ -48,3 +48,8 @@ int cnd = Integer.parseInt(arg0.getParameter("파라미터"));
       }
 
     ```
+
+## jsp 한글 인코딩 코드
+```java
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+```

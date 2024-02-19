@@ -24,7 +24,7 @@
 	<form action="calc2" method="post">
       <table>
          <tr>
-            <td class="output" colspan="4"><%= 3+4%></td>
+            <td class="output" colspan="4"><%= x+y%></td>
          </tr>
          <tr>
             <td><input type="submit" name="operator" value="CE"></td>
