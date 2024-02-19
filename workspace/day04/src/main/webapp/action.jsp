@@ -4,6 +4,7 @@
 <% 
 	String username = request.getParameter("user_name");
 	String result = null;
+	username = username.trim();
 	if(username != null || !username.equals("")) {
 		result = username;
 	}
