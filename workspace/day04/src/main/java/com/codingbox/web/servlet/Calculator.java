@@ -22,5 +22,14 @@ public class Calculator extends HttpServlet{
 		// 부모의 service를 호출해 주면 doPost, doGet 메서드를 반드시 재 구현해 주어야 한다.
 		super.service(arg0, arg1);
 	}
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		System.out.println("doPost 메소드가 호출 됐습니다.");
+	}
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		System.out.println("doGet 메소드가 호출 되었습니다.");
+	}
 
 }
