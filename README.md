@@ -92,3 +92,6 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 		doProcess(req, resp);
 }
 ```
+## 코드를 만들고 서버를 실행 시 html만 다운로드가 되는 경우가 발생함
+ - 해결방법
+ > 해당 서버와 워크스페이스를 모두 날리고 다시 만들기 web.xml은 복붙을 하는 것이 아닌 무조건 워크스페이스를 만들 때 같이 만들어지도록 하기
