@@ -4,3 +4,16 @@
     - 액션태그는 XML 문법을 따른다. 즉 시작 태그와 함께 반드시 종료 태그를 포함해야 한다.
     - 액션 태그의 기본 형식 : <jsp:... 속성="값"> 내용 <jsp:... 속성="값">
     - 내용이 없는 태그의 형식 : <jsp:... 속성="값"/>
+    1-1. 액션태그의 종류
+        - forword : 다른 페이지로의 이동, 페이지 흐름 제어
+            <jsp:forword ...>
+        - include : 외부 페이지의 내용을 포함하거나 페이지 모듈화
+            <jsp:include ...>
+        - param : 현재 페이지에서 다른 페이지에 대한 정보를 전달할 때 사용
+            <jsp:param>
+        - useBean : 빈을 생성하고 사용하기 위한 환경을 정의
+            <jsp:useBean>
+        - setProperty : 빈 속성 값을 할당
+            <jsp:setProperty>
+        - getProperty : 빈에서 송성 값을 얻어올 때 사용
+            <jsp:getProperty>
