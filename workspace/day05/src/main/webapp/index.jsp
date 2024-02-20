@@ -7,8 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<script>
-		window.open("https://naver.com","self");
-	</script>
+Welcome
 </body>
 </html>

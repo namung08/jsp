@@ -7,13 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<script>
-		window.open("https://daum.net","self");
-	</script>
-	
-	.A__A    ✨🎂✨    A__A <br/>
-( •⩊•)   _______   (•⩊• )<br/>
-(>🍰>)   |           |   (<🔪<)<br/>
-	
+	<%=request.getParameter("username") %>님 어서오세요
+	입력하신 생일은 <%=request.getParameter("userbirth") %>입니다
+		
 </body>
 </html>
