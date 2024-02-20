@@ -13,7 +13,7 @@
 	<h3>param 액션태그</h3>
 	<jsp:forward page="param_result.jsp">
 		<jsp:param value="user" name="userid"/>
-		<jsp:param value="안재원" name="username"/>
+		<jsp:param value="임현민" name="username"/>
 	</jsp:forward>
 </body>
 </html>
