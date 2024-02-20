@@ -8,6 +8,6 @@
 </head>
 <body>
 <!--mvc2 순수 view로만 사용하기 위한 jsp -->
-	<%=result%>
+	<%=request.getAttribute("result")%> 입니다.
 </body>
 </html>
