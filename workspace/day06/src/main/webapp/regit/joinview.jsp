@@ -8,7 +8,7 @@
 </head>
 <body>
 	<h3>회원가입 폼</h3>
-	<form action="join.jsp" method="post" id="joinForm"> 
+	<form action="join" method="post" id="joinForm"> 
 		아이디 <input type="text" name="userid" id="userid"><br>
 		패스워드 <input type="password" name="userpw" id="userpw"><br>
 		이름 <input type="text" name="username" id="username"><br>
