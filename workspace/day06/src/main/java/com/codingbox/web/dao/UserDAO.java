@@ -9,6 +9,8 @@ public class UserDAO {
 	// dto에서 추가만 하면 됨
 	public boolean join(UserDTO dto) {
 		// db 처리
+		
+		
 		return true;
 	}
 }
