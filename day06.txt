@@ -29,3 +29,21 @@
   - 자바에서 데이터베이스에 접속/관리할 수 있게 해주는 드라이버(API)
   - 자바에서 작성된 프로그램으로 DB와 관련된 작업을 처리할 수 있도록 제공되는 기능(코드)들을 모아 놓은 것
   - ojdbc: oracle jdbc, Oracle에서 제공하는 DB를 관리할 수 있도록 도와주는 jdbc이다
+
+4. 자바빈즈
+ - 자바빈즈(자바 객체)
+ - JSP 의 표준 액션 태그를 통해 접근할 수 있는 자바 클래스로서 멤버변수(필드)와 setter, getter 메소드로 이루어져 있다.
+ - 하나의 jsp 페이지에서도 사용하고 그 외 다른 페이지에서도 사용 가능하다.
+ - 사용 예 :
+  MemberDTO (DTO,VO,Beans)
+  객체 생성
+  java -> MemberDTO m = new MemberDTO();
+  jsp -> <jsp:useBean class="패키지명.MemberDTO" id="m">
+
+  setter()
+  java -> m.setName("자바학생");
+  jsp -> <jsp:setProperty name="m" property="name" value="자바학생">
+
+  getter()
+  java -> m.getName();
+  jsp -> <jsp:getProperty name="m" property="name">

@@ -37,7 +37,7 @@
 		out.print("차색상: " + rs.getString(3) + "<br>");
 		out.print("차종류: " + rs.getString("PRICE") + "원<br>");
 	}
-	out.print("<br><br>");
+	out.print("<br><hr><br>");
 	String carnum = "3";
 	// 너무 복잡함
 	// sql = "SELECT  * FROM car WHERE CARNUM = '"+carnum+"'";
@@ -46,6 +46,13 @@
 	pstm = conn.prepareStatement(sql);
 	// 첫 '?'에 carnum이라는 파라미터를 넣기
 	pstm.setString(1, carnum);
+	rs = pstm.executeQuery();
+	if(rs.next()) {
+		out.print("차번호: " + rs.getString(1) + "<br>");
+		out.print("차종류: " + rs.getString("BRAND") + "<br>");
+		out.print("차색상: " + rs.getString(3) + "<br>");
+		out.print("차종류: " + rs.getString("PRICE") + "원<br>");
+	}
 	// 객체 반납 re, pstm, conn을 닫아줘야함 객체 생성 순서의 역방향으로 닫아줘야함
 	rs.close();
 	pstm.close();
