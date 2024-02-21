@@ -27,9 +27,15 @@
 	// 쿼리를 실행하고 결과를 ResultSet에 저장
 	ResultSet rs = pstm.executeQuery();
 	
-	if(rs.next()) { // ResultSet에 다음 행이 있으면
-		out.print(rs.getDate(1)); // 첫 번째 열의 날짜 값을 출력
-		// 결과 실행 당일 날짜만 나오면 됨
+	while(rs.next()) { // while문으로 반복 ResultSet에 다음 행이 있으면
+		// 차번호를 가져오는 명령어
+		// 2가지 방법이 있음
+		// 인덱스 번호로 가져오기
+		out.print( "차번호 : " + rs.getString(1)+"<br>");
+		// 컬럼명으로 가져오기
+		out.print( "브랜드 : " + rs.getString("Brand")+"<br>");
+		out.print( "색상 : " + rs.getString(3)+"<br>");
+		out.print( "가격 : " + rs.getInt("PRICE")+"<br>");
 	}
 	// 객체 반납 re, pstm, conn을 닫아줘야함 객체 생성 순서의 역방향으로 닫아줘야함
 	rs.close();
