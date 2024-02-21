@@ -24,7 +24,7 @@
 	conn = DriverManager.getConnection(url, user, pass);
 	System.out.println("오라클 연결 성공");
 	// db 에서 insert 문을 복사 해올 때 ';' 복사 X
-	String sql = "INSERT INTO car VALUES('3','honda', 'Red',70000000)";
+	String sql = "INSERT INTO car VALUES('4','honda', 'Blue',70000000)";
 	// sql 문 실행
 	PreparedStatement pstm = conn.prepareStatement(sql);
 	check = pstm.executeUpdate();
