@@ -20,7 +20,7 @@
 	Class.forName(driver);
 	conn = DriverManager.getConnection(url, user, pass);
 	
-	String sql = "SELECT sysdate FROM dual";
+	String sql = "SELECT * FROM car;";
 	// dbeaver 에서의 쿼리문 날리는 명령어
 	PreparedStatement pstm = conn.prepareStatement(sql);
 	
