@@ -12,12 +12,16 @@
 	<jsp:setProperty property="age" name="member" value="22" />
 	<table border="1">
 	<tr>
-	<td>이름</td>
+	<td>이름</td> 
 	<td>나이</td>
 	</tr>
 	<tr>
-	<td></td>
-	<td></td>
+	<td>
+		<jsp:getProperty property="name" name="member"/>
+	</td>
+	<td>
+	<jsp:getProperty property="age" name="member"/>
+	</td>
 	</tr>
 	</table>
 </body>
