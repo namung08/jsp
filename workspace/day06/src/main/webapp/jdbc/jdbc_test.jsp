@@ -16,6 +16,7 @@
 	String url = "jdbc:oracle:thin:@localhost:1521:xe";
 	String user = "jsp";
 	String pass = "jsp";
+	int check = 0;
 	
 	Class.forName(driver);
 	System.out.println("jdbc Driver 로딩 성공");
@@ -26,6 +27,7 @@
 	String sql = "INSERT INTO car VALUES('3','honda', 'Red',70000000)";
 	// sql 문 실행
 	PreparedStatement pstm = conn.prepareStatement(sql);
+	check = pstm.executeUpdate();
 	/* 
 	insert, update, delete
 		-> pstm.executeUpdate() use
