@@ -28,6 +28,12 @@
 	// sql 문 실행
 	PreparedStatement pstm = conn.prepareStatement(sql);
 	check = pstm.executeUpdate();
+	System.out.println("check : " + check);
+	if(check != 0) {
+		System.out.println("데이터 삽입 성공");
+	} else {
+		System.out.println("데이터 삽입 실패");
+	}
 	/* 
 	insert, update, delete
 		-> pstm.executeUpdate() use
