@@ -26,7 +26,16 @@
 	String sql = "INSERT INTO car VALUES('3','honda', 'Red',70000000)";
 	// sql 문 실행
 	PreparedStatement pstm = conn.prepareStatement(sql);
+	/* 
+	insert, update, delete
+		-> pstm.executeUpdate() use
+		-> insert, update, delete가 적용된 건수 return
+	select
+		-> select 된 결과 값을 리턴
+	drop, create
+		-> 성공 시 0이라는 값을 return
 	
+	*/
 	
 %>
 </body>
