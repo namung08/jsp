@@ -19,7 +19,7 @@
 	<script>
 		function sendit() {
 			// validation check
-			let joinForm = document.joinForm;
+			let joinForm = document.getElementById("joinForm");
 			let nameTag = joinForm.username;
 			let birthTag = joinForm.userbirth;
 			
