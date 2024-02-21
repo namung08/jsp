@@ -13,7 +13,7 @@ function sendit() {
 		let usernameTag = document.getElementById("username");
 		let userphoneTag = document.getElementById("userphone");
 		// name 값으로 접근하는 방법
-		// joinForm.userid
+		// joinForm.userid 
 
 		if(useridTag.value == "") {
 			alert("아이디를 입력하세요");
