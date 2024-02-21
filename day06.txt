@@ -16,3 +16,11 @@
  - 데이터 접근을 목적으로 하는 객체
  - 커넥션 같은 것을 하나만 두고 여러 사용자가 DAO의 인터페이스를 사용하여 필요한 자료에 접근하도록 하는 것
  - DB를 사용해 데이터를 조회하건 조작하는 기능을 전담하도록 만든 오브젝트
+
+3. DB connection
+ 3-1. 계정생성
+  - system 계정으로 먼저 로그인
+   sqlplus system/1234;
+  - 계정생성
+   create user jsp identified by jsp;
+   grant connect, resource to jsp;
