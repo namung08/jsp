@@ -6,6 +6,9 @@
 	 // 길이체크 -> 아이디 5이상16미만, 비밀번호 8자리 이상
 	 // 비밀번호 확인 일치 체크
 	 // submit();
+	 let joinForm = document.joinForm;
+	 
+	 
 	 let userid = joinForm.userid;
 	 let userpw = joinForm.userpw;
 	 let userpwre = joinForm.userpw_re;
