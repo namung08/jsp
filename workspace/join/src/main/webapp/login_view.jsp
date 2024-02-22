@@ -21,5 +21,5 @@
 		<input type="button" value="로그인" onclick="loginit()">
 	</form>
 </body>
-</html>
 <script src="user.js"></script>
+</html>

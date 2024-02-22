@@ -81,5 +81,23 @@ function sendit() {
 } 
 
 /*
-
+	로그인 validation check
 */
+function loginit() {
+	let frm = document.frm;
+	let userid = frm.userid;
+	let userpw = frm.userpw;
+	// 아이디 빈값 처리
+	if(userid.value == "") {
+		 alert("아이디를 입력해주세요");
+		 userid.focus();
+		 return false;
+	}
+	// 비밀번호 빈값 처리
+	if(userpw.value == "") {
+		 alert("비밀번호를 입력해주세요");
+		 userpw.focus();
+		 return false;
+	}
+	frm.submit();
+}
