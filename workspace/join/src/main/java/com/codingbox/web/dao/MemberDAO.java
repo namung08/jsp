@@ -29,7 +29,7 @@ public class MemberDAO {
             pstm.setString(4, mDto.getUsergender());
             pstm.setString(5, mDto.getUserphone());
             // 쿼리 실행
-            pstm.executeUpdate();
+            //pstm.executeUpdate();
             // 쿼리 실행 결과에 따라 결과값 설정
             if(pstm.executeUpdate() != 0) { // 성공
                 result = true;
