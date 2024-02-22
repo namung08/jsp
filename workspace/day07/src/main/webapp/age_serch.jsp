@@ -16,3 +16,8 @@
 	<input type="button" value="전체확인하기" onclick="selectAll()">
 </body>
 </html>
+<script type="text/javascript">
+	function selectAll() {
+		location.href = "age_all.jsp";
+	}
+</script>
