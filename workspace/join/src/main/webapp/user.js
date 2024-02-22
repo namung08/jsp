@@ -78,4 +78,8 @@ function sendit() {
 
     // 모든 유효성 검사 통과 시 폼 제출
     joinForm.submit();
-}
+} 
+
+/*
+
+*/
