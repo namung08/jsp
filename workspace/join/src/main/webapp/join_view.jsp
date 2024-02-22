@@ -63,7 +63,7 @@
     <div id="container">
         <h1>Join Form</h1>
         <form action="" method="post" name="joinForm">
-            <p id="text">사용할 수 있는 아이디입니다.</p>
+            <p id="text" style="visibility:hidden">사용할 수 있는 아이디입니다.</p>
             <p>
                 <label>아이디 <input type="text" name="userid"></label>
                 <input type="button" value="중복확인" onclick="">
