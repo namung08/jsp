@@ -1,4 +1,6 @@
- <%@ page language="java" contentType="text/html; charset=UTF-8"
+ <%@page import="com.codingbox.web.dao.MemberDAO"%>
+<%@page import="com.codingbox.web.dto.MemberDTO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -7,7 +9,21 @@
 <title>입력 값 넣기</title>
 </head>
 <body>
-<jsp:useBean id="mdao" class="com.codingbox.web.dao.MemberDAO"></jsp:useBean>
+<jsp:useBean id="mdao" class="com.codingbox.web.dao.MemberDAO" />
+<jsp:useBean id="member" class="com.codingbox.web.dto.MemberDTO" />
+<%-- <jsp:setProperty property="userid" name="member"/> --%>
+<!-- property 속성을 "*"로 설정하면 모든 요청 매개변수를 JavaBeans의 속성에 자동으로 설정합니다. -->
+<jsp:setProperty property="*" name="member"/>
+<!-- 앞에서 전달된 name 속성과 필드의 이름이 같으면 value가 자동으로 세팅 -->
+<% 
+	mdao.join(member);
+if(mdao.join(member)){ // 성공
+%>
 
+<%
+} else { // 실패
+%>
+
+<%} %>
 </body>
 </html>

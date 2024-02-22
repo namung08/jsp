@@ -96,3 +96,8 @@ protected void doPost(HttpServletRequest req, HttpServletResponse resp)
  - 해결방법
  > 해당 서버와 워크스페이스를 모두 날리고 다시 만들기 web.xml은 복붙을 하는 것이 아닌 무조건 워크스페이스를 만들 때 같이 만들어지도록 하기
  
+## 프로퍼티 자동 세팅
+```jsp
+<jsp:setProperty property="*" name="member"/>
+<!-- 앞에서 전달된 name 속성과 필드의 이름이 같으면 value가 자동으로 세팅 -->
+```
