@@ -37,6 +37,15 @@
 		<p>우편번호</p>
 		<p>주소</p>
 		<p>상세주소</p>
+		<p>
+		참고항목
+		</p>
+		<p>
+		<input type="button" value="가입완료" onclick="sendit()">
+		</p>
 	</form>
 </body>
+<script src="user.js"></script>
+
+
 </html>

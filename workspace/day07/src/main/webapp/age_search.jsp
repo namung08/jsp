@@ -8,7 +8,7 @@
 </head>
 <body>
 	<form action="age_db.jsp">
-		<label>이름
+		<label> 이름
 			<input type="text" name="name">
 		</label><br>
 		<input type="submit">
@@ -22,3 +22,15 @@
 	</script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+

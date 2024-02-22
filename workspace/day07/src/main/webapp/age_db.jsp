@@ -18,13 +18,24 @@
 	MemberDAO mdao = new MemberDAO();
 	int age = mdao.getAge(name);
 %>
-<% if(age != 0){ %>
+<% if(age != 0) { %>
 	이름 : <%=name %><br>
 	나이 : <%=age %><br>
-<%}else{ %>
+<% } else {  %>
 	찾는 이름이 없습니다.
-<%} %>
-<input type="button" value="다시 검색하기"
-      onclick="location.href='age_search.jsp'">
+<% } %>
+
+<input type="button" value="다시 검색하기" 
+	onclick="location.href='age_search.jsp'">
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
