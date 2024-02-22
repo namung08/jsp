@@ -24,5 +24,7 @@
 <%}else{ %>
 	찾는 이름이 없습니다.
 <%} %>
+<input type="button" value="다시 검색하기"
+      onclick="location.href='age_search.jsp'">
 </body>
 </html>

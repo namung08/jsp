@@ -5,10 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.jar.Attributes.Name;
-
 import com.codingbox.web.dbconnection.DBConnection;
-import com.codingbox.web.dto.MemberDTO;
+import com.codingbox.web.dto.*;
+
 
 public class MemberDAO {
    Connection conn;
@@ -48,7 +47,12 @@ public class MemberDAO {
          pstm = conn.prepareStatement(sql);
          rs = pstm.executeQuery();
          while(rs.next()) {
-        	 
+        	 MemberDTO m = new MemberDTO();
+        	 m.setName(rs.getString(1));
+        	 m.setAge(rs.getInt(2));
+        	 System.out.println("member name : " + m.getName());
+        	 System.out.println("member name : " + m.getAge());
+        	 result.add(m);
          }
       }catch (SQLException e) {
          e.printStackTrace();
@@ -58,7 +62,7 @@ public class MemberDAO {
          System.out.println("예외 발생");
       }
       
-      return null;
+      return result;
    }
 
 
