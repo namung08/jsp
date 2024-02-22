@@ -19,11 +19,16 @@
 	mdao.join(member);
 if(mdao.join(member)){ // 성공
 %>
-
+<script>
+	alert("회원가입 성공");
+</script>
 <%
 } else { // 실패
+	
 %>
-
+<script>
+	alert("회원가입 실패");
+</script>
 <%} %>
 </body>
 </html>
