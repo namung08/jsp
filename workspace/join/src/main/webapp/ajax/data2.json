@@ -1,0 +1,9 @@
+{
+	"search_word" : [
+		{"rank" : 1, "name" : "독감"},
+		{"rank" : 2, "name" : "jsp"},
+		{"rank" : 3, "name" : "java"},
+		{"rank" : 4, "name" : "html"},
+		{"rank" : 5, "name" : "javascript"}
+	]
+}
