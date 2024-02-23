@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import com.codingbox.web.dbconnection.DBConnection;
 import com.codingbox.web.dto.MemberDTO;
@@ -81,4 +82,29 @@ public class MemberDAO {
     	
     	return result;
     }
+    // 아이디 써서 이름 검색
+    public String getname(String userid) {
+		String username = "";
+		// db처리
+		try {
+			conn = DBConnection.getConnection();
+			String sql = "SELECT * FROM TBL_MEMBER WHERE userid=?";
+			pstm = conn.prepareStatement(sql);
+			pstm.setString(1, userid);
+			rs = pstm.executeQuery();
+			
+			if(rs.next()){
+				username = rs.getString("username");
+			}
+			
+		}catch (SQLException e) {
+			e.printStackTrace();
+			System.out.println("SQL 예외 발생");
+		}catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("SQL 예외 발생");
+		}
+		return username;
+	}
+     
 }
