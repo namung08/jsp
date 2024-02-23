@@ -82,7 +82,7 @@ public class MemberDAO {
     	
     	return result;
     }
-    // 아이디 써서 이름 검색
+    // 아이디로 이름 검색
     public String getname(String userid) {
 		String username = "";
 		// db처리

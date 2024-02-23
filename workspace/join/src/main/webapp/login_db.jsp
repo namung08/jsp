@@ -18,7 +18,6 @@
 		// 로그인을 성공한 사람에 한해 session 에다가 id를 저장
 		// key session_id, value : id 저장
 		String username = mdao.getname(userid);
-		session.setAttribute("session_id", userid);
 		session.setAttribute("session_name", username);
 %>
 <script>location.href="main_view.jsp"</script>
