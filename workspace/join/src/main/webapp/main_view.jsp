@@ -19,7 +19,7 @@ alert("<%= name%>님 안녕하세요.");
 </script>
 	<p>
 		<%= name %>님<br>
-		<input type="button" value="로그아웃">
+		<input type="button" value="로그아웃" onclick="location.href='logout_db.jsp'">
 	</p>
 <%} else { %>
 	<script>
