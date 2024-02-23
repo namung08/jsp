@@ -10,15 +10,15 @@
 	<form action="login_db.jsp" method="post" name="frm">
 		<p>
 			<label>아이디 
-				<input type="text" name="userid">
+				<input type="text" name="userid" onkeypress="if (window.event.keyCode == 13){document.frm.userpw.focus()}">
 			</label>
 		</p>
 		<p>
 			<label>비밀번호
-				 <input type="password" name="userpw">
+				 <input type="password" name="userpw" onkeypress="if (window.event.keyCode == 13){loginit()}">
 			</label>
 		</p>
-		<input type="button" value="로그인" onclick="loginit()">
+		<input type="button" value="로그인" onclick="loginit()" >
 	</form>
 </body>
 <script src="user.js"></script>

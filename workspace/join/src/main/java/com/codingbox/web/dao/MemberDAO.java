@@ -46,4 +46,39 @@ public class MemberDAO {
 		
 		return result;
 	}
+    
+    // 로그인 확인
+    public boolean login(String userid, String userpw) {
+    	boolean result = false;
+    	String sql = "SELECT * FROM TBL_MEMBER WHERE userid = ? AND userpw=?";
+    	
+        try {
+        	// DB 연결
+            conn = DBConnection.getConnection();
+			pstm = conn.prepareStatement(sql);
+			// 받아온 파라미터 userid를 1번째 ?에 넣는다
+			pstm.setString(1, userid);
+			// 받아온 파라미터 userpw를 2번째 ?에 넣는다
+			pstm.setString(2, userpw);
+			// sql문 실행
+			rs = pstm.executeQuery();
+			if(rs.next()) {
+				System.out.println("로그인 성공");
+				result = true;
+			} else {
+				System.out.println("아이디 혹은 비밀번호가 틀립니다.");
+				result = false;
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			System.out.println("SQL 예외 발생");
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("SQL 예외 발생");
+		}
+    	
+    	
+    	return result;
+    }
 }
