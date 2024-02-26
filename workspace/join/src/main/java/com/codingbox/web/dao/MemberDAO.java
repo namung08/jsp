@@ -106,5 +106,33 @@ public class MemberDAO {
 		}
 		return username;
 	}
-     
+    
+    
+    public boolean checkId(String userid) {
+    	boolean result = false;
+    	String sql = "SELECT * FROM TBL_MEMBER WHERE userid = ?";
+    	
+    	try {
+    		conn = DBConnection.getConnection();
+			pstm = conn.prepareStatement(sql);
+			pstm.setString(1,userid);
+			rs = pstm.executeQuery();
+			if(rs.next()) {
+				System.out.println(rs.getString(1));
+				if(rs.getString(1).equals(userid)) {
+					System.out.println(rs.getString(1));
+					result = true;
+				}
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+			System.out.println("SQL 예외 발생");
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("SQL 예외 발생");
+		}
+    	
+    	
+		return result;
+    }
 }

@@ -104,3 +104,52 @@ function loginit() {
 
 	frm.submit();
 }
+
+// userid의 파라미터값을 가져옴
+function checkId(userid) {
+	if (userid == "") {
+		alert("아이디를 입력해주세요");
+		return false;
+	} else {
+		// ajax
+		let xhr = new XMLHttpRequest();
+		xhr.open("GET", "id_check.jsp?userid=" + userid, true);
+		xhr.send();
+		xhr.onreadystatechange = function() {
+			if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
+				// 회원가입이 가능한 아이디라면 id가 text인 영역에 "사용할 수 있는 아이디입니다"출력
+				// 그렇지 않다면 "중복된 아이디입니다" 출력
+				/*alert("hi");*/
+				if (xhr.responseText.trim() == "ok") {
+					document.getElementById("text").innerHTML = "사용할 수 있는 아이디입니다"
+					document.getElementById("text").style = "visibility:visible";
+				} else {
+					document.getElementById("text").innerHTML = "중복된 아이디입니다";
+					document.getElementById("text").style = "visibility:visible";
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
