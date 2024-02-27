@@ -59,6 +59,7 @@
         }
     </style>
 </head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <body>
     <div id="container">
         <h1>Join Form</h1>
@@ -66,7 +67,7 @@
             <p id="text" style="visibility:hidden">사용할 수 있는 아이디입니다.</p>
             <p>
                 <label>아이디 <input type="text" name="userid"></label>
-                <input type="button" value="중복확인" onclick="checkId(joinForm.userid.value)">
+                <input type="button" value="중복확인" onclick="checkId3(joinForm.userid.value)">
             </p>
             <p>
                 <label>비밀번호 <input type="password" name="userpw"></label>

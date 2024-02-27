@@ -134,9 +134,61 @@ function checkId(userid) {
 
 
 
+function checkId2(userid) {
+	if (userid == "") {
+		alert("아이디를 입력해주세요");
+		return false;
+	} else {
+		$.ajax({
+			type: 'get', // get or post
+			url: "id_check.jsp?userid=" + userid, // send address
+			async: true, // 동기여부(비동기(기본값):true,동기:false))
+			// if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200)
+			success: function(result) { // 성공 시 콜백 함수
+				if (result.trim() == "ok") {
+					document.getElementById("text").innerHTML = "사용할 수 있는 아이디입니다"
+					document.getElementById("text").style = "visibility:visible";
+				} else {
+					document.getElementById("text").innerHTML = "중복된 아이디입니다";
+					document.getElementById("text").style = "visibility:visible";
+				}
+			},
+			error: function(result, status, error) { // 실패 시 콜백 함수
+				console.log(error);
+			}
+		});
 
+	}
+}
+function checkId3(userid) {
+	if (userid == "") {
+		alert("아이디를 입력해주세요");
+		return false;
+	} else {
+		$.ajax({
+			type: 'post', // get or post
+			url: "id_check.jsp", // send address
+			data: {
+				"userid" : userid
+			},
+			async: true, // 동기여부(비동기(기본값):true,동기:false))
+			// if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200)
+			success: function(result) { // 성공 시 콜백 함수
+				if (result.trim() == "ok") {
+					document.getElementById("text").innerHTML = "사용할 수 있는 아이디입니다"
+					document.getElementById("text").style = "visibility:visible";
+				} else {
+					document.getElementById("text").innerHTML = "중복된 아이디입니다";
+					document.getElementById("text").style = "visibility:visible";
+				}
+			},
+			error: function(result, status, error) { // 실패 시 콜백 함수
+				console.log(error);
+			}
+		});
 
-
+	}
+}
 
 
 

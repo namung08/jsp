@@ -118,9 +118,7 @@ public class MemberDAO {
 			pstm.setString(1,userid);
 			rs = pstm.executeQuery();
 			if(rs.next()) {
-				System.out.println(rs.getString(1));
 				if(rs.getString(1).equals(userid)) {
-					System.out.println(rs.getString(1));
 					result = true;
 				}
 			}
@@ -135,4 +133,6 @@ public class MemberDAO {
     	
 		return result;
     }
+    
+    
 }
