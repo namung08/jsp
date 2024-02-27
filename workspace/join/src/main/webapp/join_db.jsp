@@ -13,7 +13,7 @@
 <jsp:useBean id="member" class="com.codingbox.web.dto.MemberDTO" />
 <%-- 모든 요청 매개변수를 JavaBeans의 속성에 자동으로 설정합니다. --%>
 <jsp:setProperty property="*" name="member"/>
-<%-- 전달된 name 속성과 필드의 이름이 같으면 value가 자동으로 세팅됩니다. --%>
+<%-- 전달된 name 속성과 필드의 이름이 같으면	 value가 자동으로 세팅됩니다. --%>
 <% 
     MemberDAO mdao = new MemberDAO();
     /* mdao.join(member); */
