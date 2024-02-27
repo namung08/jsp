@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import com.codingbox.web.dbconnection.DBConnection;
+import com.codingbox.web.dbconnection.DBConnection_bak;
 import com.codingbox.web.dto.MemberDTO;
 
 public class MemberDAO_bak {
@@ -21,7 +21,7 @@ public class MemberDAO_bak {
         
         try {
             // DB 연결
-            conn = DBConnection.getConnection();
+            conn = DBConnection_bak.getConnection();
             pstm = conn.prepareStatement(sql);
             // 매개변수로 받은 DTO의 정보로 쿼리 작성
             pstm.setString(1, mDto.getUserid());
@@ -55,7 +55,7 @@ public class MemberDAO_bak {
     	
         try {
         	// DB 연결
-            conn = DBConnection.getConnection();
+            conn = DBConnection_bak.getConnection();
 			pstm = conn.prepareStatement(sql);
 			// 받아온 파라미터 userid를 1번째 ?에 넣는다
 			pstm.setString(1, userid);
@@ -87,7 +87,7 @@ public class MemberDAO_bak {
 		String username = "";
 		// db처리
 		try {
-			conn = DBConnection.getConnection();
+			conn = DBConnection_bak.getConnection();
 			String sql = "SELECT * FROM TBL_MEMBER WHERE userid=?";
 			pstm = conn.prepareStatement(sql);
 			pstm.setString(1, userid);
@@ -113,7 +113,7 @@ public class MemberDAO_bak {
     	String sql = "SELECT * FROM TBL_MEMBER WHERE userid = ?";
     	
     	try {
-    		conn = DBConnection.getConnection();
+    		conn = DBConnection_bak.getConnection();
 			pstm = conn.prepareStatement(sql);
 			pstm.setString(1,userid);
 			rs = pstm.executeQuery();

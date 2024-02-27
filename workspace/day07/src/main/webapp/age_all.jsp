@@ -1,7 +1,7 @@
 <%@page import="com.codingbox.web.dto.MemberDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.codingbox.web.dao.MemberDAO"%>
-<%@page import="com.codingbox.web.dbconnection.DBConnection"%>
+<%@page import="com.codingbox.web.dbconnection.DBConnection_bak"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
