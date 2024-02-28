@@ -7,10 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	 <form action="el_test4.jsp">
-	 	id<input type="text" name="id"> <br>
-	 	pw<input type="text" name="pw"> <br>
-	 	<input type="submit">
-	 </form>
+	<form action="el_test4.jsp">
+		아이디 <input type="text" name="id"><br>
+		비밀번호 <input type="password" name="pw"><br>
+			<input type="submit">
+	</form>
 </body>
 </html>

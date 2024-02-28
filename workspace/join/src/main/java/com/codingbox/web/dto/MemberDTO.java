@@ -10,32 +10,6 @@ public class MemberDTO {
 	private String addr;
 	private String addrdetail;
 	private String addrdetc;
-	
-	
-	public String getZipcode() {
-		return zipcode;
-	}
-	public void setZipcode(String zipcode) {
-		this.zipcode = zipcode;
-	}
-	public String getAddr() {
-		return addr;
-	}
-	public void setAddr(String addr) {
-		this.addr = addr;
-	}
-	public String getAddrdetail() {
-		return addrdetail;
-	}
-	public void setAddrdetail(String addrdetail) {
-		this.addrdetail = addrdetail;
-	}
-	public String getAddrdetc() {
-		return addrdetc;
-	}
-	public void setAddrdetc(String addrdetc) {
-		this.addrdetc = addrdetc;
-	}
 	public String getUserid() {
 		return userid;
 	}
@@ -66,4 +40,30 @@ public class MemberDTO {
 	public void setUserphone(String userphone) {
 		this.userphone = userphone;
 	}
+	public String getZipcode() {
+		return zipcode;
+	}
+	public void setZipcode(String zipcode) {
+		this.zipcode = zipcode;
+	}
+	public String getAddr() {
+		return addr;
+	}
+	public void setAddr(String addr) {
+		this.addr = addr;
+	}
+	public String getAddrdetail() {
+		return addrdetail;
+	}
+	public void setAddrdetail(String addrdetail) {
+		this.addrdetail = addrdetail;
+	}
+	public String getAddrdetc() {
+		return addrdetc;
+	}
+	public void setAddrdetc(String addrdetc) {
+		this.addrdetc = addrdetc;
+	}
+	
+	
 }

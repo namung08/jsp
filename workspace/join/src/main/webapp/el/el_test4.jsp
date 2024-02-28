@@ -7,21 +7,18 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-
-<%
-	ArrayList<String> arList = new ArrayList<>();
-	arList.add("hello");
-	arList.add("jsp");
-	arList.add("el");
-	arList.add("jstl");
-	pageContext.setAttribute("list",arList);
-%>
-
 <body>
-	id : ${id } <br>
-	pw : ${pw }	<br>
-	id : ${param.id } <br>
-	pw : ${param.pw }	<br>
-	list : ${list }	<br>
+	<form action="el_test4.jsp">
+		<%
+		ArrayList<String> arList = new ArrayList<>();
+		arList.add("Hello");
+		arList.add("JSP");
+		arList.add("EL");
+		arList.add("JSTL");
+		pageContext.setAttribute("list", arList);
+		%>
+		아이디: ${param.id}<br> 패스워드: ${param.pw}<br>
+		${list}
+	</form>
 </body>
 </html>

@@ -9,5 +9,5 @@
 <body>
 	<input type="button" value="jsonAjax" onclick="sendJson();">
 	<script src="ajax.js"></script>
-</body>
+	</body>
 </html>

@@ -1,51 +1,43 @@
 /**
  * 
  */
-
-// 페이지가 로드 됬을 때
+// 페이지가 로드 됐을 때
 window.onload = function() {
-	/* 
-	data2.json의 데이터를 읽어 와서
-	실시간 검색어엔 1 키워드로 독감
-	2초뒤에 ,검색어 2 ...
-	검색어 5...
-	다시 1번으로 롤백
-	 */
+	// data2.json 파일 데이터 읽어와서 실시간 검색어엔 초마다 검색이 나오게
+	// 2초뒤에 2 JSP
+	// ...
+	// 5 키워드 나오게
+	// 2초뒤에 실시간 검색어엔 1 키워드로 독감
+	let td1 = document.getElementById("td1");
+	let td2 = document.getElementById("td2");
+
 	let xhr = new XMLHttpRequest();
-	// open(전달방식, URL주소, 동기여부(비동기:true,기본값, 동기:false));
 	xhr.open("GET", "data2.json", true);
 	xhr.send();
 	xhr.onreadystatechange = function() {
-		// 성공일때
 		if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
-			//alert(xhr.responseText);
 			let obj = JSON.parse(xhr.responseText);
-
-			//alert(obj.search_word[0].rank);
 			let i = 0;
 			let a = 0;
-			document.getElementById("th1").innerHTML = obj.search_word[i].rank;
-			document.getElementById("th2").innerHTML = obj.search_word[i].name;
-			const inteval = setInterval(
-				function() {
-					document.getElementById("th1").innerHTML = obj.search_word[i].rank;
-					document.getElementById("th2").innerHTML = obj.search_word[i].name;
-					i++;
-					a++;
-					if (obj.search_word.length == i) {
-						i = 0;
-					}
-					/*if(a >50) {
-						alert(a);
-						clearInterval(inteval);
-					}*/
-				}, 100);
-			setTimeout(function() {
-				// clearInterval(인터벌); 해당 인터벌을 삭제
-				clearInterval(inteval);
-			},2000)
+
+			const interval = setInterval(function() {
+				if (i == obj.search_word.length) {
+					i = 0;
+				}
+				td1.innerHTML = obj.search_word[i].rank;
+				td2.innerHTML = obj.search_word[i].name;
+				i++;
+				a++;
+				
+				if (a > 50) {
+					alert(A);
+					clearInterval(interval);
+				}
+			}, 2000);
 		}
-
 	}
+	setTimeout(function(){
+			// clearInterval(인터벌); : 해당 인터벌을 삭제
+			clearInterval(interval);
+		}, 2000);
 }
-

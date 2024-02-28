@@ -7,14 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-	${param.num} <br>
-	${param.num >= 3 } <br>
-	${param.num ge 3 } <br>
-	${empty param.num } <br> 
-	${not empty param.num } <br> 
-	${empty param.num ? 'num is empty' : param.num} <br> 
-	----------------------------------------------------------- <br>
-	${param.num / 2} <br>
-	${param.num % 2} <br>
+	${param.num}<br>
+	${param.num >= 3}<br>
+	${param.num ge 3}<br>
+	${empty param.num}<br>
+	${not empty param.num}<br>
+	${empty param.num ? '값이 비어 있습니다.' : param.num}<br>
+	----------------<br>
+	${param.num / 2}<br>
 </body>
 </html>
