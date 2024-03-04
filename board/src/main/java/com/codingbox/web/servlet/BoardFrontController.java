@@ -37,7 +37,7 @@ public class BoardFrontController extends HttpServlet {
 			forward = new ActionForward(true, "/board/boardwrite.jsp");
 			break;
 		case "/board/BoardList.bo": 
-			forward = new ActionForward(true, "/board/boardlist.jsp");
+			forward = new BoardListAction().execute(req, resp);
 			break;
 		}
         
