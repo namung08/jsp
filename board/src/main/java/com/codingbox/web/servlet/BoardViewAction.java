@@ -28,6 +28,7 @@ public class BoardViewAction implements Action {
 		req.setAttribute("boardreadcount", bdto.getBoardreadcount());
 		req.setAttribute("username", bdto.getUsername());
 		req.setAttribute("boardcontents", bdto.getBoardcontents());
+		req.setAttribute("boardnum", bdto.getBoardnum());
 
 		// 조회 성공 시 : /board/boardview.jsp
 		forward.setRedirect(false);

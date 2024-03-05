@@ -45,6 +45,9 @@ public class BoardFrontController extends HttpServlet {
 		case "/board/BoardView.bo":
 			forward = new BoardViewAction().execute(req, resp);
 			break;
+		case "/board/BoardAddReply.bo":
+			forward = new AddReplyAction().execute(req, resp);
+			break;
 		}
         
         

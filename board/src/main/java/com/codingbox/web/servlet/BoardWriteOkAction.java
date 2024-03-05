@@ -21,6 +21,7 @@ public class BoardWriteOkAction implements Action {
 		bdto.setBoardtitle(req.getParameter("boardtitle"));
 		bdto.setUsername(req.getParameter("username"));
 		bdto.setBoardcontents(req.getParameter("boardcontents"));
+		bdto.setBoardnum(Integer.parseInt(req.getParameter("boardnum")));
 		// dao insertBoard(dto)
 		if(bdao.insertBoard(bdto)) {
 			// 성공시 -> /board/BoardWrite.bo
