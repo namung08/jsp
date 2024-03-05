@@ -60,6 +60,8 @@ public class BoardListAction implements Action {
 		req.setAttribute("startPage", startPage);
 		req.setAttribute("endPage", endPage);
 		
+		
+		
 		// forward 방식으로 페이지 이동 -> boardlist.jsp
 		forward.setRedirect(false);
 		forward.setPath(req.getContextPath()+"/board/boardlist.jsp");

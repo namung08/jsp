@@ -21,11 +21,30 @@ public class BoardDAO {
 		HashMap<String, Integer> datas = new HashMap<>();
 		datas.put("startRow", startRow);
 		datas.put("endRow", endRow);
-		List<BoardDTO> boardList = sqlSession.selectList("Board.getBoardList",datas);
+		List<BoardDTO> boardList = sqlSession.selectList("Board.getBoardList", datas);
 		return boardList;
 	}
 
 	public int getBoardCnt() {
 		return sqlSession.selectOne("Board.getBoardCnt");
+	}
+
+	public boolean insertBoard(BoardDTO bdto) {
+		boolean result = false;
+		if (sqlSession.insert("Board.insertBoard", bdto) == 1) {
+			result = true;
+		}
+		return result;
+	}
+
+	public BoardDTO getDetail(int boardnum) {
+		BoardDTO result = null;
+		result = sqlSession.selectOne("Board.getDetail",boardnum);
+		System.out.println(result.getBoardtitle());
+		return result;
+	}
+
+	public void boardreadCountPlus(int boardnum) {
+		sqlSession.update("Board.boardreadCountPlus",boardnum);
 	}
 }

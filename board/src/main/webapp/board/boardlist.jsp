@@ -52,9 +52,13 @@ table {
 				<c:when test="${boardList != null and fn:length(boardList) > 0}">
 					<!-- 게시글이 있는 경우 -->
 					<c:forEach var="board" items="${boardList}">
-						<tr align="center" valign="middle">
+						<tr align="center" valign="middle"
+							onmouseover="this.style.background='#bbdefb'"
+                     		onmouseout="this.style.background=''" height="23px">
 							<th height="23px;">${board.boardnum }</th>
-							<th height="23px;">${board.boardtitle }</th>
+							<th height="23px;">
+								<a href="${pageContext.request.contextPath}/board/BoardView.bo?boardnum=${board.boardnum }"> ${board.boardtitle } </a>
+							</th>
 							<th height="23px;">${board.username }</th>
 							<th height="23px;">${board.boarddate }</th>
 							<th height="23px;">${board.boardreadcount }</th>
@@ -68,27 +72,41 @@ table {
 					</tr>
 				</c:otherwise>
 			</c:choose>
-
-
-		</table>
-		<br>
-		<table style="border: 0px; width: 900px;">
-			<tr align="right" valign="middle">
-				<td>
-					<a href="${pageContext.request.contextPath}/board/BoardWrite.bo">[글쓰기]</a>
-				</td>
-			</tr>
 		</table>
 		<!-- 페이징 처리 -->
 		<table style="border: 0px; width: 900px;">
 			<tr align="center" valign="middle">
 				<td>
+				<c:if test="${nowPage>1 }">
+					<a href="${pageContext.request.contextPath}/board/BoardList.bo?page=${nowPage-1}">[&lt;]</a>
+				</c:if>
 				<c:forEach var="i" begin="${startPage}" end="${endPage}">
-					[${i }]
+					<c:choose>
+						<c:when test="${nowPage == i }">
+							[${i }]
+						</c:when>
+						<c:when test="${nowPage != i }">
+							<a href="${pageContext.request.contextPath}/board/BoardList.bo?page=${i}">[${i }]</a>
+						</c:when>
+					</c:choose>
+					
 				</c:forEach>
+				<c:if test="${nowPage<totalPage }">
+					<a href="${pageContext.request.contextPath}/board/BoardList.bo?page=${nowPage+1}">[&gt;]</a>
+				</c:if>
+				</td>
+				
+			</tr>
+		</table>
+		<br>
+		<table style="border: 0px; width: 900px;">
+			<tr align="center" valign="middle">
+				<td>
+					<a href="${pageContext.request.contextPath}/board/BoardWrite.bo">[글쓰기]</a>
 				</td>
 			</tr>
 		</table>
+		
 	</div>
 
 </body>
