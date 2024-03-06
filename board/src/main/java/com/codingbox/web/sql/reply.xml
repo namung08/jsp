@@ -6,4 +6,13 @@
 	<insert id="insertReply" parameterType="replydto">
 		INSERT INTO TBL_REPLY VALUES (reply_seq.nextval, #{replycontents}, #{username}, #{password}, #{boardnum})
 	</insert>
+	<select id="getReply" parameterType="_int" resultType="replydto">
+		SELECT * FROM TBL_REPLY WHERE BOARDNUM = #{boardnum} ORDER BY REPLYNUM asc
+	</select>
+	<update id="updateReply" parameterType="replydto">
+		UPDATE TBL_REPLY SET replycontents = #{replycontents} WHERE replynum = #{replynum}
+	</update>
+	<delete id="deleteReply" parameterType="_int">
+		DELETE FROM TBL_REPLY WHERE replynum =  #{replynum}
+	</delete>
 </mapper>

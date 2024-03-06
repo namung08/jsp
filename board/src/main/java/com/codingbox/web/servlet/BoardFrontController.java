@@ -43,10 +43,19 @@ public class BoardFrontController extends HttpServlet {
 			forward = new BoardWriteOkAction().execute(req, resp);
 			break;
 		case "/board/BoardView.bo":
+			System.out.println("페이지 이동 액션");
 			forward = new BoardViewAction().execute(req, resp);
 			break;
 		case "/board/BoardAddReply.bo":
 			forward = new AddReplyAction().execute(req, resp);
+			break;
+		case "/board/BoardReplyUpdate.bo":
+			System.out.println("업데이트 넘어옴");
+			forward = new UpdateReplyAction().execute(req, resp);
+			break;
+		case "/board/DeleteReplyAction.bo":
+			System.out.println("삭제 .do로 넘어옴");
+			forward = new DeleteReplyAction().execute(req, resp);
 			break;
 		}
         

@@ -16,14 +16,16 @@ public class AddReplyAction implements Action{
 		ReplyDAO rdao = new ReplyDAO();
 		ReplyDTO rdto = new ReplyDTO();
 		
+		// 뎃글 등록 기능
 		rdto.setUsername(req.getParameter("username"));
 		System.out.println(req.getParameter("username"));
 		rdto.setPassword(req.getParameter("password"));
 		System.out.println(req.getParameter("password"));
-		rdto.setReplycontents(req.getParameter("replycontent"));
-		System.out.println(req.getParameter("replycontent"));
+		rdto.setReplycontents(req.getParameter("replycontents"));
+		System.out.println(req.getParameter("replycontents"));
 		System.out.println(req.getParameter("boardnum"));
 		rdto.setBoardnum(Integer.parseInt(req.getParameter("boardnum")));
+		
 		if(rdao.insertReply(rdto)) {
 			forward.setPath(req.getContextPath() + "/board/BoardView.bo");
 			forward.setRedirect(false);

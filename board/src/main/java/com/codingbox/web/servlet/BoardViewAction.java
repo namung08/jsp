@@ -3,7 +3,9 @@ package com.codingbox.web.servlet;
 import com.codingbox.web.action.Action;
 import com.codingbox.web.action.ActionForward;
 import com.codingbox.web.dao.BoardDAO;
+import com.codingbox.web.dao.ReplyDAO;
 import com.codingbox.web.dto.BoardDTO;
+import com.codingbox.web.dto.ReplyDTO;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -29,7 +31,11 @@ public class BoardViewAction implements Action {
 		req.setAttribute("username", bdto.getUsername());
 		req.setAttribute("boardcontents", bdto.getBoardcontents());
 		req.setAttribute("boardnum", bdto.getBoardnum());
-
+		req.setAttribute("board", bdto);
+		
+		// 뎃글 조회 기능
+		ReplyDAO rdao = new ReplyDAO();
+		req.setAttribute("replyList", rdao.getReply(boardnum));
 		// 조회 성공 시 : /board/boardview.jsp
 		forward.setRedirect(false);
 		forward.setPath(req.getContextPath() + "/board/boardview.jsp");
